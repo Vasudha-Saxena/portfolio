@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vasudha Saxena</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* RESET */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #020617;
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+/* SCROLL BAR */
+#progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #7c3aed, #a78bfa);
+  width: 0%;
+  z-index: 999;
+}
+
+/* GRID */
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(#1e293b 1px, transparent 1px),
+                    linear-gradient(90deg, #1e293b 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.08;
+  z-index: -3;
+}
+
+/* DOTS */
+body::after {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#a78bfa 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.05;
+  z-index: -2;
+}
+
+/* GLOW SHAPES (FIXED BLUR) */
+.bg1, .bg2, .bg3 {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.5;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bg1 { width: 300px; height: 300px; background: #7c3aed; top: 5%; left: 5%; }
+.bg2 { width: 280px; height: 280px; background: #2563eb; bottom: 10%; right: 10%; }
+.bg3 { width: 220px; height: 220px; background: #9333ea; top: 60%; left: 30%; }
+
+/* PARTICLES */
+.particle {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  background: #a78bfa;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: float 10s infinite linear;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-800px); }
+}
+
+/* COVER */
+.cover {
+  width: 100%;
+  height: 260px;
+  background: linear-gradient(120deg, #1e293b, #7c3aed);
+  position: relative;
+}
+
+/* PROFILE PIC (BOTTOM RIGHT) */
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid #020617;
+  object-fit: cover;
+  position: absolute;
+  right: 40px;
+  bottom: -60px;
+  box-shadow: 0 0 30px rgba(167,139,250,0.6);
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+.hero-text h1 {
+  font-size: 45px;
+  margin: 0;
+}
+
+.typing {
+  border-right: 3px solid #a78bfa;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3s steps(20), blink 0.7s infinite;
+}
+
+@keyframes typing { from { width: 0 } to { width: 100% } }
+@keyframes blink { 50% { border-color: transparent } }
+
+.tagline { color: #a78bfa; }
+.sub { color: #94a3b8; }
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  background: linear-gradient(45deg, #7c3aed, #a78bfa);
+  color: black;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.btn:hover { transform: scale(1.05); }
+
+/* SECTIONS */
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 50px 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* DIVIDER */
+.divider {
+  width: 70%;
+  height: 1px;
+  margin: 30px auto;
+  background: linear-gradient(to right, transparent, #a78bfa, transparent);
+  box-shadow: 0 0 10px #a78bfa;
+}
+
+/* SKILLS */
+.skills span {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+}
+
+.skills span:hover {
+  background: #a78bfa;
+  color: black;
+}
+
+/* CARDS */
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(167,139,250,0.4);
+}
+
+/* ICONS */
+.icons a {
+  font-size: 24px;
+  margin-right: 15px;
+  color: #a78bfa;
+}
+
+.icons a:hover {
+  color: white;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="progress"></div>
+
+<div class="bg1"></div>
+<div class="bg2"></div>
+<div class="bg3"></div>
+
+<!-- PARTICLES -->
+<script>
+for(let i=0;i<20;i++){
+  let p=document.createElement("div");
+  p.className="particle";
+  p.style.left=Math.random()*100+"%";
+  p.style.top=Math.random()*100+"%";
+  p.style.animationDuration=(5+Math.random()*10)+"s";
+  document.body.appendChild(p);
+}
+</script>
+
+<!-- COVER -->
+<div class="cover">
+  <img src="photo.jpg" class="profile-pic">
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <h1 class="typing">VASUDHA SAXENA</h1>
+    <p class="tagline">Learn • Lead • Grow</p>
+    <p class="sub">B.Tech CSE Student | Quantum University</p>
+    <a href="resume.pdf" class="btn" download>Download Resume</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section>
+  <h2>About</h2>
+  <p>Computer Science Engineering student passionate about technology and continuous learning.</p>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <h2>Skills</h2>
+  <div class="skills">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>Python</span>
+    <span>C/C++</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <h2>Experience</h2>
+
+  <div class="card">
+    <h3>Core Team Member – E-Cell GENESIS</h3>
+    <p>Worked on organizing and managing events under Srijan 4.0.</p>
+  </div>
+
+  <div class="card">
+    <h3>Event Anchor & Reporting Lead</h3>
+    <p>Anchored major events including GVFP Demo Day and handled reporting coordination.</p>
+  </div>
+
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <h2>Contact</h2>
+  <p>Email: vasudha.saxena.10@gmail.com</p>
+
+  <div class="icons">
+    <a href="https://www.linkedin.com/in/vasudha-saxena-4802b5382/" target="_blank">
+      <i class="fab fa-linkedin"></i>
+    </a>
+
+    <a href="https://github.com/Vasudha-Saxena" target="_blank">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+</section>
+
+<script>
+const sections=document.querySelectorAll("section");
+
+window.addEventListener("scroll",()=>{
+  sections.forEach(sec=>{
+    if(sec.getBoundingClientRect().top<window.innerHeight-100){
+      sec.classList.add("show");
+    }
+  });
+
+  let scrollTop=document.documentElement.scrollTop;
+  let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+  document.getElementById("progress").style.width=(scrollTop/height)*100+"%";
+});
+</script>
+
+</body>
+</html>
