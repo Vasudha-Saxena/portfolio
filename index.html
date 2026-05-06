@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vasudha Saxena Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -26,7 +26,6 @@ nav a:hover::after{width:100%;}
 
 section{padding:100px 10%;}
 
-/* HERO COVER */
 .hero{
   min-height:100vh;
   display:flex;
@@ -38,186 +37,92 @@ section{padding:100px 10%;}
   background:url('cover.jpeg') no-repeat center/cover;
 }
 
-.overlay{
-  position:absolute;
-  width:100%;height:100%;
-  background:rgba(0,0,0,0.7);
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-}
+.overlay{position:absolute;width:100%;height:100%;background:rgba(0,0,0,0.7);} 
+.hero-content{position:relative;z-index:2;}
 
 .typing{
   font-size:50px;
-  font-family:'Great Vibes',cursive;
+  font-family:'Playfair Display',serif;
+  letter-spacing:1px;
   border-right:3px solid #fff;
   white-space:nowrap;
   overflow:hidden;
   width:0;
   animation:typing 4s steps(20,end) forwards, blink 0.7s infinite;
-  text-shadow:0 0 25px #fff;
+  text-shadow:0 0 20px #fff;
 }
 
-@keyframes typing{
-  from{width:0}
-  to{width:320px}
-}
-@keyframes blink{
-  50%{border-color:transparent}
-}
+@keyframes typing{from{width:0}to{width:320px}}
+@keyframes blink{50%{border-color:transparent}}
 
 .hero h2{margin-top:20px;letter-spacing:2px;}
 .hero p{color:#ccc;margin-top:10px;}
 
 .profile{
-  position:absolute;
-  bottom:40px;
-  right:40px;
-  width:180px;height:180px;
-  border-radius:50%;
-  border:3px solid #fff;
-  box-shadow:0 0 30px #fff;
-  overflow:hidden;
+  position:absolute;bottom:40px;right:40px;
+  width:180px;height:180px;border-radius:50%;
+  border:3px solid #fff;box-shadow:0 0 30px #fff;overflow:hidden;
 }
 .profile img{width:100%;height:100%;object-fit:cover;}
 
-.btn{
-  margin-top:30px;padding:12px 25px;border:1px solid #fff;
-  background:transparent;color:#fff;border-radius:10px;
-  box-shadow:0 0 15px #fff;cursor:pointer;
-}
+.btn{margin-top:30px;padding:12px 25px;border:1px solid #fff;background:transparent;color:#fff;border-radius:10px;box-shadow:0 0 15px #fff;cursor:pointer;}
 
-.icons{
-  margin-top:25px;display:flex;gap:20px;justify-content:center;
-}
-.icons a{
-  color:#fff;font-size:20px;border:1px solid #fff;
-  padding:12px;border-radius:50%;
-  box-shadow:0 0 10px #fff;transition:0.3s;
-}
-.icons a:hover{
-  background:#fff;color:#000;
-}
+.icons{margin-top:25px;display:flex;gap:20px;justify-content:center;}
+.icons a{color:#fff;font-size:20px;border:1px solid #fff;padding:12px;border-radius:50%;box-shadow:0 0 10px #fff;transition:0.3s;}
+.icons a:hover{background:#fff;color:#000;}
 
 /* SKILLS */
 .skills h2{text-align:center;margin-bottom:40px;}
-.skill-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:20px;
-}
-.skill{
-  padding:20px;text-align:center;border:1px solid #fff;border-radius:10px;
-  box-shadow:0 0 10px #fff;transition:0.3s;
-}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:20px;}
+.skill{padding:20px;text-align:center;border:1px solid #fff;border-radius:10px;box-shadow:0 0 10px #fff;transition:0.3s;}
 .skill:hover{transform:scale(1.1);}
 
 /* PROJECTS */
-.project-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
-  margin-top:40px;
+.projects-timeline{position:relative;margin-top:50px;}
+.projects-timeline::before{
+  content:'';position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;transform:translateX(-50%);
 }
 
-.project-card{
-  padding:25px;
-  border:1px solid #fff;
-  border-radius:15px;
-  box-shadow:0 0 15px #fff, 0 0 30px rgba(255,255,255,0.5);
-  transition:0.3s;
-}
+.project-item{width:45%;padding:20px;border:1px solid #fff;border-radius:10px;box-shadow:0 0 15px #fff;margin-bottom:30px;position:relative;}
+.project-item.left{left:0;}
+.project-item.right{left:55%;}
 
-.project-card:hover{
-  transform:translateY(-10px) scale(1.03);
-  box-shadow:0 0 25px #fff, 0 0 60px rgba(255,255,255,0.8);
-}
-
-.project-card h3{
-  margin-bottom:10px;
-}
-
-.project-card p{
-  color:#ccc;
-  margin-bottom:10px;
-}
-
-.project-links{
-  margin-top:15px;
-  display:flex;
-  gap:15px;
-}
-
-.project-links a{
-  text-decoration:none;
-  color:#fff;
-  border:1px solid #fff;
-  padding:8px 15px;
-  border-radius:8px;
-  box-shadow:0 0 10px #fff;
-  transition:0.3s;
-}
-
-.project-links a:hover{
-  background:#fff;
-  color:#000;
-}
-
-/* EXPERIENCE */
+/* EXPERIENCE FIXED LINE */
 .timeline{position:relative;margin-top:50px;}
 .timeline::before{
-  content:'';position:absolute;left:50%;width:2px;height:100%;background:#fff;
+  content:'';
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:50%;
+  width:2px;
+  background:#fff;
   transform:translateX(-50%);
 }
-.item{
-  width:45%;padding:20px;border:1px solid #fff;border-radius:10px;
-  box-shadow:0 0 10px #fff;margin-bottom:30px;position:relative;
-}
+
+.item{width:45%;padding:20px;border:1px solid #fff;border-radius:10px;box-shadow:0 0 10px #fff;margin-bottom:30px;position:relative;}
 .item.left{left:0;}
 .item.right{left:55%;}
 
 footer{text-align:center;padding:20px;border-top:1px solid #fff;margin-top:50px;}
 
 @media(max-width:768px){
-  .timeline::before{left:0;}
-  .item{width:100%;left:0 !important;}
-  .profile{position:static;margin-top:20px;}
+.timeline::before{left:0;}
+.item{width:100%;left:0 !important;}
+.profile{position:static;margin-top:20px;}
 }
 
-
-/* GLOWING BACKGROUND CIRCLES */
-.bg-circle{
-  position:fixed;
-  border:2px solid rgba(255,255,255,0.8);
-  border-radius:50%;
-  box-shadow:0 0 20px #fff, 0 0 40px #fff inset;
-  animation:float 8s infinite ease-in-out;
-  opacity:0.6;
-  z-index:0;
-}
-
-@keyframes float{
-  0%{transform:translateY(0);} 
-  50%{transform:translateY(-30px);} 
-  100%{transform:translateY(0);} 
-}
-
-.hero, section, footer, nav{
-  position:relative;
-  z-index:1;
-}
+/* BACKGROUND CIRCLES */
+.bg-circle{position:fixed;border:2px solid rgba(255,255,255,0.8);border-radius:50%;box-shadow:0 0 20px #fff;animation:float 8s infinite ease-in-out;opacity:0.6;z-index:0;}
+@keyframes float{0%{transform:translateY(0);}50%{transform:translateY(-30px);}100%{transform:translateY(0);}}
+.hero, section, footer, nav{position:relative;z-index:1;}
 
 </style>
 </head>
 <body>
 
-<!-- BACKGROUND CIRCLES -->
 <div class="bg-circle" style="width:120px;height:120px;top:10%;left:5%;"></div>
-<div class="bg-circle" style="width:80px;height:80px;top:30%;right:10%;animation-delay:2s;"></div>
-<div class="bg-circle" style="width:150px;height:150px;bottom:10%;left:15%;animation-delay:4s;"></div>
-<div class="bg-circle" style="width:60px;height:60px;bottom:30%;right:20%;animation-delay:1s;"></div>
-<div class="bg-circle" style="width:200px;height:200px;top:60%;left:40%;animation-delay:3s;"></div>
-
+<div class="bg-circle" style="width:80px;height:80px;top:30%;right:10%;"></div>
 
 <nav>
 <a href="#">Home</a>
@@ -228,24 +133,12 @@ footer{text-align:center;padding:20px;border-top:1px solid #fff;margin-top:50px;
 
 <section class="hero">
 <div class="overlay"></div>
-
 <div class="hero-content">
 <h1 class="typing">Vasudha Saxena</h1>
 <h2>Learn • Lead • Grow</h2>
 <p>B.Tech CSE Student | Quantum University, Roorkee</p>
-
-<button class="btn" onclick="window.open('resume.pdf')">Download Resume</button>
-
-<div class="icons">
-<a href="https://www.linkedin.com/in/vasudha-saxena-4802b5382" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-<a href="https://github.com/Vasudha-Saxena" target="_blank"><i class="fab fa-github"></i></a>
-<a href="mailto:vasudha.saxena.10@gmail.com"><i class="fas fa-envelope"></i></a>
 </div>
-</div>
-
-<div class="profile">
-<img src="photo.jpeg" alt="profile">
-</div>
+<div class="profile"><img src="photo.jpeg"></div>
 </section>
 
 <section id="skills" class="skills">
@@ -254,34 +147,28 @@ footer{text-align:center;padding:20px;border-top:1px solid #fff;margin-top:50px;
 <div class="skill">C</div>
 <div class="skill">C++</div>
 <div class="skill">Python</div>
-
 <div class="skill">HTML</div>
 <div class="skill">CSS</div>
-
 <div class="skill">MySQL</div>
 <div class="skill">Git & GitHub</div>
 <div class="skill">VS Code</div>
 </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
 <h2 style="text-align:center;">PROJECTS</h2>
-<div class="project-grid">
+<div class="projects-timeline">
 
-<div class="project-card">
+<div class="project-item left">
 <h3>Personal Portfolio Website</h3>
 <p>Designed and developed a modern responsive portfolio with dark theme, glow effects, and animations.</p>
 <p><b>Tech:</b> HTML, CSS</p>
 </div>
-</div>
 
-<div class="project-card">
+<div class="project-item right">
 <h3>GUI Calculator App</h3>
 <p>Built a desktop calculator with a user-friendly interface to perform basic arithmetic operations.</p>
 <p><b>Tech:</b> Python</p>
-
-</div>
 </div>
 
 </div>
@@ -304,9 +191,7 @@ footer{text-align:center;padding:20px;border-top:1px solid #fff;margin-top:50px;
 </div>
 </section>
 
-<footer>
-<p>© 2026 Vasudha Saxena. All Rights Reserved.</p>
-</footer>
+<footer><p>© 2026 Vasudha Saxena. All Rights Reserved.</p></footer>
 
 </body>
 </html>
